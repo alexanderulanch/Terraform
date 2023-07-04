@@ -1,5 +1,12 @@
 provider "aws" {
   region = "us-east-1"
+
+  default_tags {
+    tags = {
+      Owner     = "Alex Ulanch"
+      ManagedBy = "Terraform"
+    }
+  }
 }
 
 resource "aws_s3_bucket" "terraform_state" {
